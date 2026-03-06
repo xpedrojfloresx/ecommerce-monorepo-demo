@@ -1,0 +1,61 @@
+<section class="hero hero--secondary">
+    <div class="container">
+        <h1>Contacto</h1>
+        <p class="lead">¿Tienes dudas, sugerencias o quieres colaborar? Envíanos un mensaje usando el formulario.</p>
+    </div>
+</section>
+
+<section class="container content-section">
+    {{!-- Mensajes de estado --}}
+    {{#if success}}
+        <div class="alert alert--success">{{success}}</div>
+    {{/if}}
+
+    {{#if errors}}
+        <div class="alert alert--danger">
+            <ul>
+                {{#each errors}}
+                    <li>{{this.msg}}</li>
+                {{/each}}
+            </ul>
+        </div>
+    {{/if}}
+
+    <div class="grid grid--2">
+        <div>
+            <h2>Formulario de contacto</h2>
+            <form action="/api/contact" method="POST" class="form contact-form" novalidate>
+                <div class="form-group">
+                    <label for="name">Nombre</label>
+                    <input id="name" name="name" type="text" class="form-control" value="{{old.name}}" required />
+                </div>
+            
+                <div class="form-group">
+                    <label for="email">Correo electrónico</label>
+                    <input id="email" name="email" type="email" class="form-control" value="{{old.email}}" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Asunto</label>
+                    <input id="subject" name="subject" type="text" class="form-control" value="{{old.subject}}" />
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Mensaje</label>
+                    <textarea id="message" name="message" class="form-control" rows="6" required>{{old.message}}</textarea>
+                </div>
+                <br>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+                </div>
+            </form>
+        </div>
+        <hr>
+        <aside>
+            <h3>Otras formas de contactarnos</h3>
+            <p><strong>Teléfono:</strong> +54 9 11 1234 5678</p>
+            <p><strong>Email:</strong> <a href="mailto:info@ejemplo.com">info@ejemplo.com</a></p>
+            <p class="muted">Te responderemos a la brevedad. Si adjuntas archivos, por favor envíalos desde el correo.</p>
+        </aside>
+    </div>
+</section>

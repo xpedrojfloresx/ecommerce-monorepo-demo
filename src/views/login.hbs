@@ -1,0 +1,84 @@
+<div
+  class="d-flex align-items-center justify-content-center min-vh-100 bg-light"
+>
+  <div class="card shadow-sm w-100" style="max-width: 420px;">
+    <div class="card-body p-4">
+
+      {{#if error}}
+        <div class="alert alert-danger" role="alert">
+          {{error}}
+        </div>
+      {{/if}}
+
+      <h3 class="card-title mb-3 text-center">Iniciar sesión</h3>
+      <form method="POST" action="/login" novalidate>
+        <div class="mb-3">
+          <label for="email" class="form-label">Correo electrónico</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            value="{{email}}"
+            placeholder="nombre@ejemplo.com"
+            required
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="password" class="form-label">Contraseña</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            name="password"
+            placeholder="Contraseña"
+            required
+          />
+        </div>
+
+        <div class="d-grid">
+          <button type="submit" class="btn btn-primary">Entrar</button>
+        </div>
+      </form>
+
+      <div class="mt-3 text-center">
+        <a href="/forgot-password" class="me-3">¿Olvidaste tu contraseña?</a>
+        <a href="/api/usuarios/register">Crear cuenta</a>
+      </div>
+    </div>
+  </div>
+  <div class="position-absolute top-0 end-0 m-3">
+    <button
+      class="btn btn-primary"
+      data-bs-toggle="modal"
+      data-bs-target="#viewPasswordModal"
+    >
+      <i class="bi bi-patch-question"></i>
+    </button>
+  </div>
+</div>
+
+<div class="modal fade" id="viewPasswordModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">Agregar Usuario</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+        ></button>
+      </div>
+
+      <div class="modal-body">
+        <p><strong>Usuario de prueba: Admin</strong></p>
+        <ul>
+          <li><strong>Email:</strong> admin@test.com</li>
+          <li><strong>Contraseña:</strong> 1234</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

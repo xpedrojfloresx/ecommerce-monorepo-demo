@@ -1,0 +1,42 @@
+{
+  "name": "integradorn2",
+  "version": "1.0.0",
+  "description": "Integrador numero dos para el bootcamp de Full-Stack Engineer, se hara uso de backend y frontend con hbs, estilos con bootstrap y servidores con express",
+  "keywords": [
+    "Integrador",
+    "N°2",
+    "Handlebars",
+    "Express",
+    "Bootstrap",
+    "NodeJs"
+  ],
+  "homepage": "https://github.com/xpedrojfloresx/Fullstack-bootcamp#readme",
+  "bugs": {
+    "url": "https://github.com/xpedrojfloresx/Fullstack-bootcamp/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xpedrojfloresx/Fullstack-bootcamp.git"
+  },
+  "license": "ISC",
+  "author": "Pedro Flores",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.8",
+    "dotenv": "^17.3.1",
+    "env": "^0.0.2",
+    "express": "^5.2.1",
+    "express-handlebars": "^8.0.3",
+    "express-session": "^1.19.0",
+    "express-validator": "^7.3.1",
+    "mongoose": "^9.2.3",
+    "morgan": "^1.10.1",
+    "path": "^0.12.7"
+  }
+}

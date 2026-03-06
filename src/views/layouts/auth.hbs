@@ -1,0 +1,41 @@
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap Icons (si usás íconos) -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <title>Login/Register Page</title>
+  </head>
+
+  <body>
+
+    {{{body}}}
+
+    <!-- JS (IMPORTANTE: bundle) -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    ></script>
+
+    <script>
+      document.getElementById("register-form").addEventListener("submit",
+      function (e) { const password = document.getElementById("password").value;
+      const confirmPassword = document.getElementById("confirmPassword").value;
+      const errorEl = document.getElementById("error-msg"); if (password !==
+      confirmPassword) { e.preventDefault(); // ← evita que el form se envíe al
+      servidor errorEl.textContent = "Las contraseñas no coinciden";
+      errorEl.style.display = "block"; } else { errorEl.style.display = "none";
+      // oculta el error si ya coinciden } });
+    </script>
+  </body>
+
+</html>

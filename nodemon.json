@@ -1,0 +1,16 @@
+{
+  "watch": [
+    "src/",
+    "index.js",
+    "server.js"
+  ],
+  "ext": "js,hbs,json,css,html",
+  "exec": "node server.js",
+  "ignore": [
+    "node_modules/",
+    ".git/"
+  ],
+  "delay": 1000,
+  "legacyWatch": true,
+  "interval": 500
+}

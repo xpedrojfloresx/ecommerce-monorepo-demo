@@ -1,0 +1,90 @@
+{{! /src/views/register.hbs (sin elemento html) }}
+<div
+  class="container d-flex align-items-center justify-content-center"
+  style="min-height:100vh;"
+>
+  <div class="w-100" style="max-width:420px;">
+    <div class="text-center mb-4">
+      <h1 class="h4">Crear cuenta</h1>
+      <p class="text-muted mb-0">Ingrese sus datos para registrarse</p>
+    </div>
+    <div class="card shadow-sm">
+      <div class="card-body p-4">
+
+        {{#if success}}
+          <div class="alert alert-success" role="alert">
+            {{success}}
+          </div>
+        {{/if}}
+
+         {{#if error}}
+            <div class="alert alert-danger" role="alert">
+              {{error}}
+            </div>
+    {{/if}}
+        
+    <form action="/api/usuarios/register" method="POST" id="register-form" novalidate>
+          <div class="mb-3">
+            <label for="name" class="form-label">Nombre completo</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              name="name"
+              placeholder="Juan Pérez"
+              required
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="email" class="form-label">Correo electrónico</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              name="email"
+              placeholder="correo@ejemplo.com"
+              required
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="password" class="form-label">Contraseña</label>
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              name="password"
+              placeholder="********"
+              required
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="confirmPassword" class="form-label">Confirmar contraseña</label>
+            <input
+              type="password"
+              class="form-control"
+              id="confirmPassword"
+              name="confirmPassword"
+              placeholder="********"
+              required
+            />
+          </div>
+
+          <div class="d-grid mb-3">
+            <button type="submit" class="btn btn-primary">Registrarse</button>
+          </div>
+
+          <div class="text-center">
+            <small class="text-muted">
+              ¿Ya tienes una cuenta?
+              <a href="/login">Iniciar sesión</a>
+            </small>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
