@@ -113,7 +113,7 @@ if (sendCartBtn) {
         }
 
         try {
-            const response = await fetch("/api/cart", {
+            const response = await fetch("/api/carrito", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

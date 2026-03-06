@@ -6,23 +6,23 @@
     </div>
 
     {{#if success}}
-      <div class="alert alert-success" role="alert">
-        {{success}}
-      </div>
-      <script>
-        const form = document.getElementById('usersAddForm');
-        if (form) form.reset();
-      </script>
+    <div class="alert alert-success" role="alert">
+      {{success}}
+    </div>
+    <script>
+      const form = document.getElementById('usersAddForm');
+      if (form) form.reset();
+    </script>
     {{/if}}
 
     {{#if error}}
-      <div class="alert alert-danger" role="alert">
-        {{error}}
-      </div>
-      <script>
-        const form = document.getElementById('usersAddForm');
-        if (form) form.reset();
-      </script>
+    <div class="alert alert-danger" role="alert">
+      {{error}}
+    </div>
+    <script>
+      const form = document.getElementById('usersAddForm');
+      if (form) form.reset();
+    </script>
     {{/if}}
 
     <div class="d-flex gap-2">
@@ -78,8 +78,7 @@
         <div class="col-md-6">
           <div class="input-group">
             <span class="input-group-text"><i class="bi bi-search"></i></span>
-            <input id="searchInput" type="search" class="form-control"
-              placeholder="Buscar por nombre o email">
+            <input id="searchInput" type="search" class="form-control" placeholder="Buscar por nombre o email">
           </div>
         </div>
       </div>
@@ -98,36 +97,34 @@
 
           <tbody>
             {{#if usuarios.length}}
-              {{#each usuarios}}
-                <tr>
-                  <td>{{this.userId}}</td>
+            {{#each usuarios}}
+            <tr>
+              <td>{{this.userId}}</td>
 
-                  <td>
-                    <div class="d-flex align-items-center gap-3">
-                      <div>
-                        <div class="fw-semibold">{{this.nombre}}</div>
-                      </div>
-                    </div>
-                  </td>
+              <td>
+                <div class="d-flex align-items-center gap-3">
+                  <div>
+                    <div class="fw-semibold">{{this.nombre}}</div>
+                  </div>
+                </div>
+              </td>
 
-                  <td class="text-break">{{this.email}}</td>
+              <td class="text-break">{{this.email}}</td>
 
-                  <td>{{this.fechaRegistro}}</td>
+              <td>{{this.fechaRegistro}}</td>
 
-                  <td class="text-end">
-                    <form action="/users/{{this.userId}}?_method=DELETE" method="post" class="d-inline"
-                      onsubmit="return confirm('¿Eliminar usuario {{this.nombre}}?');">
-                      <button type="submit" class="btn btn-sm btn-outline-danger">
-                        <i class="bi bi-trash"></i> Eliminar
-                      </button>
-                    </form>
-                  </td>
-                </tr>
-              {{/each}}
+              <td class="text-end">
+                <button class="btn btn-sm btn-outline-danger btn-delete-user" data-id="{{this.userId}}"
+                  data-name="{{this.nombre}}">
+                  <i class="bi bi-trash"></i> Eliminar
+                </button>
+              </td>
+            </tr>
+            {{/each}}
             {{else}}
-              <tr>
-                <td colspan="5" class="text-center text-muted py-4">No hay usuarios registrados.</td>
-              </tr>
+            <tr>
+              <td colspan="5" class="text-center text-muted py-4">No hay usuarios registrados.</td>
+            </tr>
             {{/if}}
           </tbody>
         </table>
